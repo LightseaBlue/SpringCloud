@@ -1,0 +1,16 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-config-server
+  # 连接码云远程仓库
+  cloud:
+    config:
+      server:
+        git:
+          # 注意是https的而不是ssh
+          uri: https://gitee.com/lightseablue/spring-cloud-config.git
+          # 通过 config-server可以连接到git，访问其中的资源以及配置~
+          username: ma.daoyu@foxmail.com
+          password: zz1314520

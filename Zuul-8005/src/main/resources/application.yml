@@ -1,0 +1,34 @@
+#公共配置
+server:
+  port: 8005
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://Eureka7001:7001/eureka/,http://Eureka7002:7002/eureka/,http://Eureka7003:7003/eureka/
+
+info:
+  # 项目的名称
+  app.name: Zuul
+spring:
+  application:
+    name: SpringCloudZuul
+
+# zull 路由网关配置
+zuul:
+  # 路由相关配置
+  routes:
+    # eureka注册中心的服务提供方路由名称   服务名
+    #  可以通过  http://localhost:8005/SPRINGCLOUDPROVIDE/**  访问服务
+    mydept.serviceId: SPRINGCLOUDPROVIDE
+    # 将eureka注册中心的服务提供方路由名称 改为自定义路由名称
+    #  可以通过  http://localhost:8005/myZuul/**  访问服务
+    mydept.path: /myZuul/**
+  # 不能再使用这个路径访问了，*： 忽略,隐藏全部的服务名称~
+  #  不可以通过  http://localhost:8005/SPRINGCLOUDPROVIDE/**  访问服务
+  ignored-services: "*"
+  # 设置公共的前缀
+#  prefix: /haust

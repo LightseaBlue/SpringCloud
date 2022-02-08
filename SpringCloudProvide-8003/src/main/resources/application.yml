@@ -1,0 +1,44 @@
+#公共配置
+server:
+  port: 8003
+
+spring:
+  datasource:
+    #配置数据库连接池类型
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    #druid 数据源专有配置
+    druid:
+      url: jdbc:mysql://localhost:3306/test3?serverTimezone=UTC
+      username: root
+      password: a
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+  application:
+    name: SpringCloudProvide
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://Eureka7001:7001/eureka/,http://Eureka7002:7002/eureka/,http://Eureka7003:7003/eureka/
+
+info:
+  # 项目的名称
+  app.name: SpringCloudProvide8003

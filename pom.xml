@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ShiningBlueOcean</groupId>
+    <artifactId>SpringCloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>SpringCloudProvide-8001</module>
+        <module>SpringCloudApi</module>
+        <module>SpringCloudProvide-8002</module>
+        <module>SpringCloudProvide-8003</module>
+        <module>SpringCloudEureka-7001</module>
+        <module>SpringCloudEureka-7002</module>
+        <module>SpringCloudEureka-7003</module>
+        <module>SpringCloudConsumer-Ribbon</module>
+        <module>SpringCloudConsumer-Feign</module>
+        <module>SpringCloudProvider-Hystrix-8004</module>
+        <module>HystrixMonitor</module>
+        <module>Zuul-8005</module>
+        <module>Spring-Cloud-Config-Server-9527</module>
+        <module>Spring-Cloud-Config-Consumer-9528</module>
+        <module>SpringCloudEureka-Config-7001</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <SpringCloudVersion>Hoxton.SR9</SpringCloudVersion>
+        <SpringBootVersion>2.3.5.RELEASE</SpringBootVersion>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringCloud核心 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${SpringCloudVersion}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringBoot核心 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${SpringBootVersion}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- MySQL -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.25</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.2.6</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
+                <scope>provided</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+
+    </build>
+
+</project>
